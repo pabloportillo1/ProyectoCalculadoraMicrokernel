@@ -1,3 +1,4 @@
+from plugins.modulo import Modulo
 from core import microkernel
 from plugins.add import Add
 from plugins.multiply import Multiply
@@ -12,11 +13,12 @@ def main():
 
     kernel = MicroKernel()
 
-    kernel.register_operation(Add())
-    kernel.register_operation(Multiply())
-    kernel.register_operation(Substract())
-    kernel.register_operation(Power())
-    kernel.register_operation(Divide())
+    kernel.register(Add())
+    kernel.register(Multiply())
+    kernel.register(Substract())
+    kernel.register(Power())
+    kernel.register(Divide())
+    kernel.register(Modulo())
 
     while True:
         print("\nAvailable operations:", list(kernel.operations.keys()))
